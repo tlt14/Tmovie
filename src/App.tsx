@@ -1,24 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import { publicRoutes } from './routes';
+import './App.css'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { useSelector } from 'react-redux';
+import { RootState } from './store';
+import { useEffect } from 'react';
 
 function App() {
+  const { theme } = useSelector((state: RootState) => state)
+  useEffect(() => {
+    // if (theme === 'dark') {
+    document.body.classList.toggle('dark')
+    // }
+  }, [theme])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Routes>
+        {
+          publicRoutes.map((route, index) => {
+            const Layout = route.layout
+            return <Route key={index} path={route.path} element={<Layout>{route.element}</Layout>} />
+          })
+        }
+      </Routes>
     </div>
   );
 }
