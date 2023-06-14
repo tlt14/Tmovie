@@ -10,11 +10,10 @@ import { RootState } from './store';
 import { useEffect } from 'react';
 
 function App() {
-  const { theme } = useSelector((state: RootState) => state)
+  const { theme } = useSelector((state: RootState) => state.theme)
   useEffect(() => {
-    // if (theme === 'dark') {
-    document.body.classList.toggle('dark')
-    // }
+      document.body.classList.add(theme)
+      document.body.classList.remove(theme==='dark'?'light':'dark')
   }, [theme])
   return (
     <div>

@@ -1,5 +1,4 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { RootState } from "./store";
 
 const initialState = {
     theme: localStorage.getItem('theme') || 'dark',

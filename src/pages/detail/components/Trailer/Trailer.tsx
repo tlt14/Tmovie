@@ -29,7 +29,7 @@ const Trailer = (props: PropsType) => {
                     dataTrailer?.results?.map((item: ITrailer) => (
                         <div key={item.id} className="px-2">
                             <Link to={`?key=${item.key}`}>
-                                <img className="object-cover w-full rounded " src={`https://i3.ytimg.com/vi/${item.key}/maxresdefault.jpg`} alt="" />
+                                <img className="object-cover w-full rounded " src={`https://i3.ytimg.com/vi/${item?.key}/maxresdefault.jpg`} alt="" />
                                 <p className="font-[500] dark:text-white text-sm w-full overflow-clip truncate ">{item.name}</p>
                             </Link>
                         </div>

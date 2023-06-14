@@ -20,7 +20,7 @@ const Trending = (props: TypeProps) => {
           return (
             index < 6 &&
             <div className="col-span-1 " key={item.id}>
-              <Link to="">
+              <Link to={`/movie/${item.id}`}>
                 <div className="card">
                   <div className="card2">
                     <img className="w-full max-h-56 object-cover rounded"

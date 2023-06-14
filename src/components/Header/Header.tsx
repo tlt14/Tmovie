@@ -1,16 +1,15 @@
 import { Link } from 'react-router-dom'
 import { setTheme } from '../../theme.slice'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { auth, handleLogin, handleLogout } from '../../config/firebase'
+import { RootState } from '../../store'
 const Header = () => {
     const dispatch = useDispatch()
+    const { theme } = useSelector((state: RootState) => state.theme)
+
     const handleToggleTheme = (e: any) => {
-        if (!e.target.checked) {
-            console.log('light')
-            dispatch(setTheme('light'))
-        } else {
-            console.log('dark')
-            dispatch(setTheme('dark'))
-        }
+        dispatch(setTheme(!e.target.checked? 'light' : 'dark'))
+        localStorage.setItem('theme', !e.target.checked? 'light' : 'dark')
     }
     return (
         <nav className='bg-white border-gray-200 dark:bg-gray-900 sticky top-0 z-50 shadow-md'>
@@ -93,15 +92,31 @@ const Header = () => {
                 </div>
                 <div className='items-center justify-end hidden  md:flex md:w-2/12 md:order-2 ' id='navbar-search '>
                     <label className="ui-switch mr-3">
-                        <input type="checkbox" onChange={handleToggleTheme} />
+                        <input type="checkbox"
+                        onChange={handleToggleTheme} 
+                        checked={theme==='dark'}                        
+                        />
                         <div className="slider">
                             <div className="circle"></div>
                         </div>
                     </label>
 
-                    <button className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'>
+                    {
+                        !auth.currentUser &&
+                        <button
+                        onClick={handleLogin}
+                        className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'>
                         Đăng nhập
                     </button>
+                    }
+                    {
+                        auth.currentUser &&
+                        <button
+                        onClick={handleLogout}
+                        className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'>
+                        Đăng xuất
+                    </button>
+                    }
                 </div>
             </div>
         </nav>
