@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDisplay, faHome, faTv } from '@fortawesome/free-solid-svg-icons'
+import { faDisplay, faHome, faSearch, faTv } from '@fortawesome/free-solid-svg-icons'
 
 function Sidebar() {
 
@@ -14,10 +14,10 @@ function Sidebar() {
                 </Link>
             </li>
             <li className="mt-2">
-                <Link to="/"
+                <Link to="/search" 
                     className="text-blue-500 uppercase font-bold px-4 py-2 hover:bg-slate-500 rounded " >
-                    <FontAwesomeIcon className='mr-2' icon={faDisplay} />
-                    PHIM NGẮN
+                    <FontAwesomeIcon className='mr-2' icon={faSearch} />
+                    Search
                 </Link>
             </li>
         </ul>

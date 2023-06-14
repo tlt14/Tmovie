@@ -3,18 +3,19 @@ import { IResult } from "../../../types/result.type";
 import { IMovie } from "../../../types/movie.type";
 
 interface PropsType {
-  data: IResult | undefined
-  title: string
+  data: IResult | undefined,
+  title: string,
+  path: string
 }
 
 const MovieList = (props: PropsType) => {
-  const { data, title } = props
+  const { data, title ,path} = props
 
   return (
     <div className="w-full py-2">
       <div className="flex flex-row justify-between items-center py-2 border-b-2 border-gray-200">
         <p className="text-xl font-[500] dark:text-white " >{title}</p>
-        <Link to="/trending" className="text-white  px-4 py-2 hover:bg-slate-500 rounded ">
+        <Link to={path} className="text-white  px-4 py-2 hover:bg-slate-500 rounded ">
           Xem tất cả
         </Link>
       </div>

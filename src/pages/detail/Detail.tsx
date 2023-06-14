@@ -14,7 +14,7 @@ const Detail = () => {
     const { data } = useGetDetailMovieQuery(id);
     const { data: recommendations } = useGetRecommendationsQuery(id);
     const { data: dataTrailer } = useGetTrailerQuery(id);
-    
+    console.log(id)
 
     const [commentList,setCommentList] = useState<IComment[]>([])
 
@@ -30,6 +30,9 @@ const Detail = () => {
             getComments(id,(comments:IComment[])=>{
                 setCommentList(comments)
             })
+        }
+        return ()=>{
+            setCommentList([])
         }
     },[id])
     return (

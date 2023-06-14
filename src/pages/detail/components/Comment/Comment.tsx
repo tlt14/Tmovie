@@ -20,7 +20,7 @@ export default function Comment (props: ICommentProps) {
     }
   return (
     <div className='mt-5'>
-      <h2 className='dark:text-white font-[500] text-xl border-b-1 pb-2'>Bình luận <span>0</span></h2>
+      <h2 className='dark:text-white font-[500] text-xl border-b-1 pb-2'>Bình luận <span>{commentList.length|| 0}</span></h2>
       <div className='flex flex-col '>
         {
             commentList &&

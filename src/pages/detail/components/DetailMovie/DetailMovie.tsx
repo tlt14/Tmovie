@@ -19,10 +19,10 @@ export default function DetailMovie({ data, children }: DetailMovieProps) {
         <div className="col-span-9">
             <div className="">
                 {
-                    // key && <iframe width="870" height="490" src={`https://www.youtube.com/embed/${key}`} title={"123"} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                    key && <iframe width="870" height="490" src={`https://www.youtube.com/embed/${key}`} title={"123"} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                 }
                 {
-                    // !key && data?.id && <iframe className="rounded" width="100%" height="500px" src={`https://www.2embed.to/embed/tmdb/movie?id=${data?.id}`} title="Cấu hình Router và xây dựng cơ chế tải Layout cho dự án Tiktok tại F8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                    !key && data?.id && <iframe className="rounded" width="100%" height="500px" src={`https://www.2embed.to/embed/tmdb/movie?id=${data?.id}`} title="Cấu hình Router và xây dựng cơ chế tải Layout cho dự án Tiktok tại F8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                 }
             </div>
             <div className="content dark:text-white">
