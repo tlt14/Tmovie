@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { IResult } from '../../types/result.type'
+import { IResult } from '../types/result.type'
 
 
 

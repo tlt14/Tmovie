@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { homeApi } from './pages/home/home.service'
+import { homeApi } from './services/home.service'
 import { setupListeners } from '@reduxjs/toolkit/dist/query'
-import { detailApi } from './pages/detail/detail.service'
+import { detailApi } from './services/detail.service'
 import themeReducer from './theme.slice'
-import { searchApi } from './pages/search/services/search.service'
+import { searchApi } from './services/search.service'
 import searchReducer from './pages/search/search.slice'
 export const store = configureStore({
   reducer: {

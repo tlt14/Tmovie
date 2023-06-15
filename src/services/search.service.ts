@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { IResult } from '../../../types/result.type'
-import { IGenres } from '../../../types/genres.type'
+import { IResult } from '../types/result.type'
+import { IGenres } from '../types/genres.type'
 
 
 

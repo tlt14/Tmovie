@@ -8,7 +8,7 @@ const Banner = (props: PropsType) => {
     const { bannerItem } = props
     return (
         <figure className="relative w-full transition-all duration-300 cursor-pointer ">
-            <img className="rounded-lg w-full max-h-96 object-cover" src={`https://image.tmdb.org/t/p/w500/${bannerItem?.backdrop_path}`} alt="imagedescription" />
+            <img className="rounded-lg w-full max-h-96 object-cover" src={`https://image.tmdb.org/t/p/original/${bannerItem?.backdrop_path}`} alt="imagedescription" />
             <figcaption className="absolute px-4 text-lg text-white top-1/3">
                 <p className="font-semibold text-xl mb-2">{bannerItem?.title}</p>
                 <p>{bannerItem?.overview}</p>

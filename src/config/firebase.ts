@@ -13,6 +13,7 @@ import { collection, addDoc } from "firebase/firestore";
 // Your web app's Firebase configuration
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { toast } from "react-toastify";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -44,9 +45,11 @@ const handleLogin=async()=>{
 }
 const handleLogout=async()=>{
   await signOut(auth).then(() => {
-    // Sign-out successful.
+    toast.success("Đăng xuất thành công")
+    console.log("Đăng xuất thành công")
+    window.location.reload()
   }).catch((error) => {
-    // An error happened.
+    toast.error(error.message)
   });
 }
 

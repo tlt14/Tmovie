@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { homeApi } from './home.service'
+import { homeApi } from '../../services/home.service'
 import { setupListeners } from '@reduxjs/toolkit/dist/query'
 
 interface HomeState {

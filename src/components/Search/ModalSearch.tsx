@@ -1,10 +1,10 @@
 import * as React from "react";
-import { useGetTrendingQuery } from "../../pages/home/home.service";
+import { useGetTrendingQuery } from "../../services/home.service";
 import { RootState } from "../../store";
 import { useDispatch, useSelector } from "react-redux";
 import { setShowModal } from "../../pages/search/search.slice";
 import { Link } from "react-router-dom";
-import { useSearchMovieQuery } from "../../pages/search/services/search.service";
+import { useSearchMovieQuery } from "../../services/search.service";
 
 export default function ModalSearch() {
   const {query} = useSelector((state:RootState)=>state.search)
@@ -23,7 +23,7 @@ export default function ModalSearch() {
           {/* Modal header */}
           <div className="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-              Tìm kiếm hàng đầu
+              Kết quả
             </h3>
             <button
               type="button"

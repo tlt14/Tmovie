@@ -1,7 +1,7 @@
 import DetailMovie from "./components/DetailMovie";
 import Propose from "./components/Propose";
 import { useParams } from "react-router-dom";
-import { useGetDetailMovieQuery, useGetRecommendationsQuery, useGetTrailerQuery } from "./detail.service";
+import { useGetDetailMovieQuery, useGetRecommendationsQuery, useGetTrailerQuery } from "../../services/detail.service";
 import Trailer from "./components/Trailer";
 import Comment from "./components/Comment";
 import { addComment, getComments } from "../../config/firebase";

@@ -8,7 +8,7 @@ import {
   useGetNowPlayingQuery,
   useGetPopularQuery,
   useGetTrendingQuery,
-} from "../home/home.service";
+} from "../../services/home.service";
 import Pagination from "./Pagination/Pagination";
 
 export function ViewAll() {

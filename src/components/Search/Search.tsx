@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { setQuery, setShowModal, startSearch } from "../../pages/search/search.slice";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
@@ -35,10 +34,18 @@ export default function Search() {
         value={query}
         onChange={(e) => {
           dispatch(setQuery(e.target.value))
+          if(!e.target.value){
+            dispatch(setShowModal(false))
+          }
         }}
-        onKeyDown={()=>{
+        onKeyDown={(e)=>{
+          if(e.key === 'Enter'){
+            dispatch(setShowModal(false))
+          }
           dispatch(setShowModal(true))
         }}
+        
+        
       />
     </div>
   );

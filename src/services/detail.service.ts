@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { IDetail } from '../../types/detail.type'
-import { IResult } from '../../types/result.type'
-import { ITrailerResult } from '../../types/trailer.type'
+import { IDetail } from '../types/detail.type'
+import { IResult } from '../types/result.type'
+import { ITrailerResult } from '../types/trailer.type'
 
 
 
