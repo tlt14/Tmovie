@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Header from "../../Header";
 import ModalSearch from "../../Search/ModalSearch";
 import Sidebar from "./Sidebar";
@@ -18,7 +17,7 @@ const DefaultLayout = (props: PropsType) => {
         isShowModal && <ModalSearch />
       }
       <div className="max-w-screen-xl  mx-auto p-4">
-        <div className="grid grid-cols-12 gap-4">
+        <div className="grid grid-cols-12 gap-4 max-[640px]:grid-cols-1">
           <div className="col-span-2">
             <Sidebar />
           </div>

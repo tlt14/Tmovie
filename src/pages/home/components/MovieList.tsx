@@ -19,7 +19,7 @@ const MovieList = (props: PropsType) => {
           Xem tất cả
         </Link>
       </div>
-      <div className="grid grid-cols-6 gap-4 mt-2">
+      <div className="grid grid-cols-6 max-[640px]:grid-cols-2  gap-4 mt-2">
         {
           data?.results?.map((item: IMovie, index: number) => {
             return (

@@ -27,7 +27,7 @@ export function ViewAll() {
       : option === "upcoming"
       ? useGetMovieUpcomingQuery
       : useGetTrendingQuery;
-  const { data: movieData, isFetching } = movieQuery(currentPage);
+  const { data: movieData } = movieQuery(currentPage);
 
   useEffect(() => {
     setData(movieData);

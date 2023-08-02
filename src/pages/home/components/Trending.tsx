@@ -14,7 +14,7 @@ const Trending = (props: TypeProps) => {
         Xem tất cả
       </Link>
     </div>
-    <div className="grid grid-cols-3 gap-4 mt-2">
+    <div className="grid grid-cols-3 max-[640px]:grid-cols-1 gap-4 mt-2">
       {
         dataTrending?.results?.map((item: IMovie, index: number) => {
           return (

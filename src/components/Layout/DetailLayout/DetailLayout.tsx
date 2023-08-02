@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Header from "../../Header";
 import ModalSearch from "../../Search/ModalSearch";
 import { RootState } from "../../../store";

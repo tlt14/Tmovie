@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useGetTrendingQuery } from "../../services/home.service";
 import { RootState } from "../../store";
 import { useDispatch, useSelector } from "react-redux";
 import { setShowModal } from "../../pages/search/search.slice";

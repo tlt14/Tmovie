@@ -1,10 +1,7 @@
-import { setQuery, setShowModal, startSearch } from "../../pages/search/search.slice";
+import { setQuery, setShowModal } from "../../pages/search/search.slice";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
 
-interface PropsType{
-    setIsShowModal: React.Dispatch<React.SetStateAction<boolean>>
-}
 export default function Search() {
     const dispatch = useDispatch()
     const {query} =useSelector((state:RootState)=> state.search)

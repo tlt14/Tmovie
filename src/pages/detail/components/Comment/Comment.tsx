@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { addComment, auth } from '../../../../config/firebase';
+import {  auth } from '../../../../config/firebase';
 import { IComment } from '../../../../types/comment.type';
 import { formatTime } from '../../../../utils/formatTime';
-import { useEffect, useState } from 'react';
+import {  useState } from 'react';
 
 
 export interface ICommentProps {

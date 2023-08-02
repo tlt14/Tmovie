@@ -8,7 +8,6 @@ import { IMovie } from "../../types/movie.type";
 import { useSelector } from "react-redux";
 import { RootState } from '../../store';
 import { useEffect, useState } from 'react';
-import { IResult } from "../../types/result.type";
 
 type Props = {};
 function useQuery() {
@@ -34,7 +33,7 @@ const SearchPage = (props: Props) => {
       })
       setData(newResult)
     }
-  },[gm,keySearch ])
+  },[gm, keySearch, resultSearch?.results])
   
   return (
     <div>
